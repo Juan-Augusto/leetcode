@@ -6,7 +6,7 @@ function memoize(fn) {
   const cache = {};
   return function (...args) {
     const key = JSON.stringify(args);
-    if (cache[key]) {
+    if (cache[key] || cache[key] === 0) {
       return cache[key];
     }
 
